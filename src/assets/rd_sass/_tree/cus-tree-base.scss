@@ -1,0 +1,69 @@
+/*
+ 表头
+*/
+.cus-tree-header {
+    text-align: initial;
+    background-color: rgba(41, 57, 126, 1) !important;
+    height: 100%;
+}
+
+.cus-tree-header_font {
+    color: #ffffff !important;
+}
+
+/*
+目录树
+*/
+.tree-arrow.has-child:after {
+    background: url(../../img/arrow.png);
+    border: 0;
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    transform: rotate(0deg) translateY(-50%) translateX(-2px);
+}
+
+.tree-arrow.expanded.has-child:after {
+    transform: rotate(90deg) translateY(0%) translateX(-8px);
+}
+
+.tree-node.selected>.tree-content {
+    background: #398df0;
+}
+
+.tree-node.selected>.tree-content>.tree-anchor {
+    color: #ffffff;
+}
+
+.tree-content {
+    padding: 2px 0;
+}
+
+.tree-scope {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.release {
+    color: #a9a9a9;
+}
+
+.tree-anchor {
+    color: #ffffff !important;
+}
+
+.tree-node.selected > .tree-content {
+    background: rgba(0, 108, 167, 1) !important;
+}
+
+.tree-node:not(.selected) > .tree-content:hover{
+    background: rgba(58, 75, 160, 1) !important;
+}
+
+/*
+头部
+*/
+.tree-title {
+    color: #00CCFF !important;
+}

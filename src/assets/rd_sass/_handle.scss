@@ -1,0 +1,18 @@
+@import './themes';
+
+
+/*定义方法*/
+@mixin color_primary($color) {
+  color: $color;
+  /*判断匹配*/
+  [data-theme="primary1"] & {
+    color: $color-primary1;
+  }
+  [data-theme="primary2"] & {
+    color: $color-primary2;
+  }
+  [data-theme="primary3"] & {
+    color: $color-primary3;
+  }
+
+}

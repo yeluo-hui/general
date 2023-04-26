@@ -1,0 +1,218 @@
+<template>
+<div>
+  <el-card class="box-card">
+    <div slot="header"  class="clearfix">
+      <span class="title-img">测量统计</span>
+    </div>
+
+  </el-card>
+  <el-card class="box-card">
+    <div slot="header" class="clearfix">
+      <span class="title-img">统计数据</span>
+    </div>
+    <ve-table
+        border-y
+        fixed-header
+        :max-height="300"
+        :columns="columns"
+        :table-data="tableData"
+        :footer-data="footerData"
+        :cell-style-option="cellStyleOption"
+        rowKeyFieldName="rowKey"
+    />
+  </el-card>
+</div>
+</template>
+
+<script>
+export default {
+  name: "areaStatistics",
+  data() {
+    return {
+      rowData: [],
+      cellStyleOption: {
+        footerCellClass: ({ row, column, rowIndex }) => {
+          if (column.field === "address") {
+            return "table-footer-cell-class1";
+          }
+        },
+      },
+      columns:[
+        { field: "col1", key: "1", title: "序号", width: "10%" },
+        { field: "col1", key: "2", title: "锚段", width: "10%" },
+        {
+          title: "基础测量数据 - 导高值",
+          children: [
+            {
+              field: "col3",
+              key: "21",
+              title: "总支柱数",
+              width: 110,
+            },
+            {
+              field: "col3",
+              key: "22",
+              title: "检测支柱数",
+              width: 110,
+            },
+            {
+              field: "col3",
+              key: "23",
+              title: "合格支柱数",
+              width: 110,
+            },
+            {
+              field: "col3",
+              key: "24",
+              title: "A类缺陷数",
+              width: 110,
+            },
+            {
+              field: "col3",
+              key: "25",
+              title: "B类缺陷数",
+              width: 110,
+            },
+            {
+              field: "col3",
+              key: "26",
+              title: "未检测支柱数",
+              width: 110,
+            }
+          ],
+        },
+        {
+          title: "基础测量数据 - 拉出值",
+          children: [
+            {
+              field: "col3",
+              key: "31",
+              title: "总支柱数",
+              width: 110,
+            },
+            {
+              field: "col3",
+              key: "32",
+              title: "检测支柱数",
+              width: 110,
+            },
+            {
+              field: "col3",
+              key: "33",
+              title: "合格支柱数",
+              width: 110,
+            },
+            {
+              field: "col3",
+              key: "34",
+              title: "A类缺陷数",
+              width: 110,
+            },
+            {
+              field: "col3",
+              key: "35",
+              title: "B类缺陷数",
+              width: 110,
+            },
+            {
+              field: "col3",
+              key: "36",
+              title: "未检测支柱数",
+              width: 110,
+            }
+          ],
+        },
+        {
+          title: "线岔中心测量数据 - 偏差值",
+          children: [
+            {
+              field: "col3",
+              key: "41",
+              title: "检测支柱数",
+              width: 110,
+            },
+            {
+              field: "col3",
+              key: "42",
+              title: "合格支柱数",
+              width: 110,
+            },
+            {
+              field: "col3",
+              key: "43",
+              title: "A类缺陷数",
+              width: 110,
+            },
+            {
+              field: "col3",
+              key: "44",
+              title: "B类缺陷数",
+              width: 110,
+            }
+          ],
+        }
+      ],
+      tableData: [],
+      footerData: []
+    }
+  },
+  methods: {
+    initTableData() {
+      let data = [];
+      for (let i = 0; i < 15; i++) {
+        data.push({
+          rowKey: i,
+          name: i,
+          date: i,
+          hobby: i,
+          address: i,
+        });
+      }
+      this.tableData = data;
+    },
+
+    initFooterData() {
+      this.footerData = [
+        {
+          rowKey: 0,
+          name: "合计",
+          date: 213,
+          hobby: 355,
+          address: 189,
+        },
+        {
+          rowKey: 1,
+          name: "汇总值",
+          date: 1780,
+          hobby: 890,
+          address: 2988,
+        },
+      ];
+    },
+    created() {
+      this.initTableData();
+      this.initFooterData();
+    },
+  }
+}
+</script>
+
+<style scoped>
+  .clearfix{
+    text-align: left;
+  }
+ .title-img{
+   padding-left: 5px;
+   border-width: 0px;
+   left: 0px;
+   top: 0px;
+   width: 4px;
+   height: 18px;
+   background: inherit;
+   border-left:4px solid rgba(83, 146, 255, 1);
+   border-radius: 3px;
+   -moz-box-shadow: none;
+   -webkit-box-shadow: none;
+   box-shadow: none;
+ }
+</style>
