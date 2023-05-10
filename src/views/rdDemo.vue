@@ -37,7 +37,7 @@ export default {
   name: 'RdDemo',
   data() {
     return {
-      title: '课程目录数',
+      title: '百度地图',
       cusComponent: null,
       titles: [
         {
@@ -156,6 +156,22 @@ export default {
             },{
               title: '树菜单',
               url: 'ldsc/tree-mune/treeMenu.vue'
+            }
+          ]
+        }, {
+          title: 'echart',
+          children: [
+            {
+              title: '柱状',
+              url: 'echart/columnar.vue'
+            }
+          ]
+        }, {
+          title: 'map',
+          children: [
+            {
+              title: '百度地图',
+              url: 'map/baiduMap.vue'
             }
           ]
         }
